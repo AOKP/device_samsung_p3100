@@ -34,6 +34,15 @@ PRODUCT_COPY_FILES := \
 	$(LOCAL_PATH)/init.espresso.rc:root/init.espresso.rc \
 	$(LOCAL_PATH)/ueventd.espresso.rc:root/ueventd.espresso.rc
 
+# Modules
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/system/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+   $(LOCAL_PATH)/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
+   $(LOCAL_PATH)/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
+   $(LOCAL_PATH)/system/lib/modules/rpmsg_client_sample.ko:system/lib/modules/rpmsg_client_sample.ko \
+   $(LOCAL_PATH)/system/lib/modules/rpmsg_client_sample.ko:system/lib/modules/rpmsg_server_sample.ko \
+   $(LOCAL_PATH)/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
+
 # Vold
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
