@@ -20,9 +20,16 @@ LOCAL_PATH := device/samsung/p3100
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Audio
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/p3100/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+# Audio and prebuilt kernel
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/espressorf \
+	$(LOCAL_KERNEL):kernel \
+	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/espressowifi \
 	$(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Packages
